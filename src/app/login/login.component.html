@@ -1,0 +1,45 @@
+<!-- <div class="row">
+    <h1 class="text-center btn btn-success">Login Page</h1>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 border p-3">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" #email id="inputEmail4">
+
+        <label for="inputEmail4" class="form-label">Password</label>
+        <input type="email" class="form-control" #password id="inputEmail4">
+
+        <button class="btn btn-primary m-2" (click)="login(email.value, password.value)"> Login</button>
+        <button class="btn btn-danger m-2"> Reset</button>
+    </div>
+</div> -->
+
+
+<form class="p-3" #loginForm="ngForm" (ngSubmit)="loginDrivenForm(loginForm)">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 border p-3">
+            <h1 class="text-center p-3">Login Page</h1>
+            <hr>
+
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" email required ngModel #email="ngModel">
+            <span *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Email!</span>
+            <br>
+
+            <label for="inputEmail4" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" password required ngModel #password="ngModel">
+            <span *ngIf="!password.valid && password.touched" pattern="^[a-zA-Z]+$" class="text-danger">Please Enter
+                Password!</span>
+            <br>
+
+            <button class="btn btn-primary m-2" type="submit" [disabled]="!loginForm.valid"> Login</button>
+            <button class="btn btn-primary m-2"> <a routerLink="/register"
+                    class="text-white text-decoration-none">Register</a></button>
+            <button class="btn btn-danger m-2"> Reset</button>
+        </div>
+    </div>
+</form>3
