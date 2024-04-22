@@ -1,11 +1,51 @@
-<div class="row">
+<!-- <div class="row">
     <h1 class="text-center btn btn-success"> Dashboard Page</h1>
     
     <div class="col">
-        <a [routerLink]="['/aboutus']">About Us</a>
+        
     </div>
     <div class="col">
-        <a [routerLink]="['/contactus']">Contact Us</a>
+        
     </div>
-    <button class="col-md-4 btn btn-primary m-2" type="button" (click)="logOut()" > Login</button>
-</div>
+    <button class="col-md-4 btn btn-primary m-2"  > Login</button>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="nav">
+            <h6 id="logo">Logo</h6>
+            <div id="nav-tab">
+                <i class="ri-menu-unfold-4-line"></i>
+                <h6 [routerLink]="['/contactus']">Contact Us</h6>
+                <h6>Classes</h6>
+                <h6>Courses</h6>
+                <h6>Blog</h6>
+                <h6 [routerLink]="['/aboutus']">About Us</h6>
+                <button type="button" type="button" (click)="logOut()">Log Out</button>
+            </div>
+        </div>
+        <div id="content">
+            <div id="content1">
+                <h1>Learn from the <span>coolest</span> coding platform of India.</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus sit molestiae reprehenderit fuga
+                    nam voluptas. Repudiandae repellat error distinctio molestiae.</p>
+                <button>Explore Now</button>
+            </div>
+            <div id="content2">
+                <img src="https://media.istockphoto.com/id/1284921335/vector/web-development-team-agency-vector.jpg?s=612x612&w=0&k=20&c=jVt_E_mU4ycL6TznqRxTMLGgmxWe-VVOPPTqpL-fWAg=" alt="hjk">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

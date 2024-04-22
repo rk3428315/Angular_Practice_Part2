@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
   ngOnInit():void{
+
+    // this.showTabUnderLine();
   }
 
   constructor(private router:Router){
@@ -18,4 +21,11 @@ export class DashboardComponent {
     localStorage.setItem("DrivenFormValue", "false");
     this.router.navigate(['/login'])
   }
+
+  // showTabUnderLine(){
+  //   let underline = document.querySelector("#nav-tab h6");
+  //   underline?.addEventListener("mouseover",function(){
+  //     document.querySelector("#nav-tab h6")displa = "red";
+  //   })
+  // }
 }
