@@ -1,0 +1,3 @@
+input.form-control.ng-touched.ng-pristine.ng-invalid {
+    border-color: red;
+}

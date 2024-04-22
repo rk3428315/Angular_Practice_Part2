@@ -4,18 +4,22 @@
     <div class="col-md-6">
         <label for="inputCity" class="form-label">First Name</label>
         <input type="text" class="form-control" placeholder="" aria-label="First name" formControlName="fname">
+        <span class="text-danger" *ngIf="registrationForm.controls['fname'].touched && registrationForm.controls['fname'].invalid && (registrationForm.controls['fname'].errors)">Please enter firstname!</span>
     </div>
     <div class="col-md-6">
         <label for="inputCity" class="form-label">Last Name</label>
         <input type="text" class="form-control" placeholder="" aria-label="Last name" formControlName="lname">
+        <span class="text-danger" *ngIf="registrationForm.controls['lname'].touched && registrationForm.controls['lname'].invalid && (registrationForm.controls['lname'].errors)">Please enter lastname!</span>
     </div>
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
         <input type="email" class="form-control" id="inputEmail4" formControlName="email">
+        <span class="text-danger" *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].invalid && (registrationForm.controls['email'].errors)">Please enter email!</span>
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Password</label>
         <input type="password" class="form-control" id="inputPassword4" formControlName="password">
+        <span class="text-danger" *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].invalid && (registrationForm.controls['password'].errors)">Please enter password!</span>
     </div>
 
     
@@ -33,15 +37,18 @@
         <div class="col-md-6">
             <label for="inputCity" class="form-label">Mobile No.</label>
             <input type="number" class="form-control" placeholder="" aria-label="Last name" formControlName="mobile">
+            <span class="text-danger" *ngIf="registrationForm.controls['mobile'].touched && registrationForm.controls['mobile'].invalid && (registrationForm.controls['mobile'].errors)">Please enter mobile!</span>
         </div>
 
     <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="" formControlName="address">
+        <span class="text-danger" *ngIf="registrationForm.controls['address'].touched && registrationForm.controls['address'].invalid && (registrationForm.controls['address'].errors)">Please enter address!</span>
     </div>
     <div class="col-md-6">
         <label for="inputCity" class="form-label">City</label>
         <input type="text" class="form-control" id="inputCity" formControlName="city">
+        <span class="text-danger" *ngIf="registrationForm.controls['city'].touched && registrationForm.controls['city'].invalid && (registrationForm.controls['city'].errors)">Please enter city!</span>
     </div>
     <!-- <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
@@ -53,8 +60,13 @@
     <div class="col-md-2">
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip" formControlName="zip">
+        <span class="text-danger" *ngIf="registrationForm.controls['zip'].touched && registrationForm.controls['zip'].invalid && (registrationForm.controls['zip'].errors)">Please enter zip!</span>
     </div>
-    <div class="col-12 mx-4">
-        <button type="submit" class="btn btn-primary">Register</button>
+    <div class="row p-3">
+        <div class="col-md-6 ">
+            <button type="submit" class="btn btn-primary m-2" [disabled]="!registrationForm.valid">Register</button>
+            <button type="button" class="btn btn-danger m-2" (click)="resetRegForm()">Reset</button>
+            <button type="button" class="btn btn-success" (click)="setOrEditFormValue()">Fill Data</button>
+        </div>
     </div>
 </form>
